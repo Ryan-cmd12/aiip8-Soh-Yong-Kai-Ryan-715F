@@ -38,11 +38,6 @@ def main():
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size =Test_Size, random_state = Random_State, stratify=y)
 
-    pipe = Pipeline([   
-        ("preprocessor", preprocessor()),
-        ("model", LogisticRegression(max_iter=2000)),
-    ])
-
     for name, pipe in models.items():
         pipe.fit(X_train, y_train)
         pred = pipe.predict(X_test)

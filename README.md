@@ -48,7 +48,7 @@ flowchart TD;
     D --> E[Split datasets are trained]
     E --> F[Preprocessors are built according to methods in preprocessor.py]
     F --> G[Model pipelines are built and used to generate predictions]
-    G --> H[Results are evaluated and saved]
+    G --> H[Results are evaluated]
     H --> I[End]
 ```
 

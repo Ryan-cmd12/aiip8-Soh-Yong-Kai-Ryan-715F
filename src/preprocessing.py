@@ -6,7 +6,7 @@ from .config import (Numerical_Imputer_Strategy, Categorical_Imputer_Strategy, T
 
 def preprocessor():
     numerical_pipe = Pipeline([
-        ("scaler", RobustScaler(with_centering=True, with_scaling=True)),
+        ("scaler", RobustScaler(with_centering =True, with_scaling =True)),
         ("imputer", Numerical_Imputer_Strategy),
     ])
 
@@ -17,7 +17,7 @@ def preprocessor():
 
     return ColumnTransformer([
         ("num", numerical_pipe, Numerical_cols),
-        ("cat", categorical_pipe, Categorical_cols)
+        ("cate", categorical_pipe, Categorical_cols)
     ])
 
 def preprocessor_dense():
@@ -28,10 +28,10 @@ def preprocessor_dense():
 
         categorical_pipe = Pipeline([
             ("imputer", Categorical_Imputer_Strategy),
-            ("onehot", OneHotEncoder(handle_unknown= "ignore", sparse_output=False)),
+            ("onehot", OneHotEncoder(handle_unknown = "ignore", sparse_output =False)),
         ])
 
         return ColumnTransformer([
             ("num", numerical_pipe, Numerical_cols),
-            ("cat", categorical_pipe, Categorical_cols)
+            ("cate", categorical_pipe, Categorical_cols)
         ])

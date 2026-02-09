@@ -40,6 +40,19 @@ To modify parameters, access the 'src/config.py' file and update the respective 
 
 Description of flow of the pipeline:
 
+```mermaid
+flowchart TD;
+    A[Start: run.sh] --> B[load_data.py <br/> phishing.db is converted into panadas Data Frame]
+    B --> C[Data is cleaned and ready to be preprocessed]
+    C --> D[Main.py <br/> Data is first split into features and label indicator]
+    D --> E[Split datasets are trained]
+    E --> F[Preprocessors are built according to methods in preprocessor.py]
+    F --> G[Model pipelines are built and used to generate predictions]
+    G --> H[Results are evaluated and saved]
+    H --> I[End]
+```
+
+
 ## Feature Processing Summary
 Features         | Handle Missing           | Encoding     \
 Numerical        | KNNImputer               | **RobustScaler(for linear models)

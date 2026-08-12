@@ -1,7 +1,5 @@
-Name : SOH YONG KAI RYAN  \
-Email : e1516774@u.nus.edu
 
-## Overview of submission:
+## Overview
 An End-To-End Machine Learning Pipeline (Data loading -> preprocessing -> Model Training/Evaluation)
 An EDA python notebook that contains findings of given dataset
 Requirement.txt for all required libraries
